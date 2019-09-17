@@ -1,6 +1,6 @@
 # Task-Master
 
-
+![Screenshot][Home.png]
 
 
 Here Users can keep track of a list of tasks they need to do. This will start as a simple web application using Flask for the backend and SQLAlchemy for the database. Login/Signup page can be easily created if required later. This has following pages.
