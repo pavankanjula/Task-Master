@@ -17,6 +17,9 @@ class Todo(db.Model):
 
 @app.route('/', methods=['POST','GET'])
 def index():
+    """
+        This function renders the main Dashboard page and handles Add task feature.
+    """
     if request.method == 'POST':
         task_content = request.form['content']
         if task_content == '':
@@ -35,6 +38,9 @@ def index():
 
 @app.route('/delete/<int:id>')
 def delete(id):
+    """
+    This function handles the delete feature.
+    """
     task_to_delete = Todo.query.get_or_404(id)
 
     try:
@@ -46,6 +52,9 @@ def delete(id):
 
 @app.route('/update/<int:id>', methods=['POST', 'GET'])
 def update(id):
+    """
+    This function handles the update feature.
+    """
     task = Todo.query.get_or_404(id)
     if request.method == 'POST':
         updated_task_content = request.form['content']
